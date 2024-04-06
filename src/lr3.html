@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // Пример: Получение данных из фейкового API
+        const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+        // Выполняем GET-запрос к API
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка сети: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Обрабатываем полученные данные
+                console.log('Данные из фейкового API:', data);
+            })
+            .catch(error => {
+                console.error('Ошибка при получении данных:', error);
+            });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
